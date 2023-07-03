@@ -1,4 +1,4 @@
-// ==UserScript==
+ble// ==UserScript==
 // @name	Content-Security-Policy Blocker
 // @namespace	karrdozo
 // @match	https://*
@@ -39,9 +39,9 @@ GM_registerMenuCommand("Edit CSP rules", () => {
 });
 
 if (cspDisable) {
-	GM_registerMenuCommand("Clear CSP rules", () => { localStorage.removeItem("CSPDisable") });
+	GM_registerMenuCommand("CSP Enable", () => { localStorage.removeItem("CSPDisable") });
 } else {
-	GM_registerMenuCommand("Clear CSP rules", () => { localStorage.setItem("CSPDisable") });
+	GM_registerMenuCommand("CSP Disable", () => { localStorage.setItem("CSPDisable") });
 }
 
 GM_registerMenuCommand("Clear CSP rules", () => { localStorage.removeItem("CSPBlocker") });
