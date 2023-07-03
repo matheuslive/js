@@ -37,5 +37,5 @@ GM_registerMenuCommand("Edit CSP rules", () => {
 		localStorage.setItem("CSPBlocker", newrule)
 	}
 });
-GM_registerMenuCommand("Clear CSP rules", () => { localStorage.setItem("CSPBlocker", "") });
+GM_registerMenuCommand("Clear CSP rules", () => { localStorage.setItem("CSPBlocker", "disable") });
 
