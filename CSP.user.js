@@ -1,4 +1,4 @@
-ble// ==UserScript==
+// ==UserScript==
 // @name	Content-Security-Policy Blocker
 // @namespace	karrdozo
 // @match	https://*
