@@ -31,7 +31,7 @@ GM_registerMenuCommand("No Third-Party", () => { localStorage.setItem("CSPBlocke
 GM_registerMenuCommand("Restrict js-elem", () => { localStorage.setItem("CSPBlocker", "script-src-elem 'self'") });
 GM_registerMenuCommand("Edit CSP rules", () => {
 	var currentRule = localStorage.getItem("CSPBlocker");
-	if (currentRule = "disable") {currentRule = null}
+	if (currentRule == "disable") {currentRule = null}
 	const newrule = prompt("Editing CSP rules", currentRule || "");
 	if (newrule && newrule != "") {
 		localStorage.setItem("CSPBlocker", newrule)
