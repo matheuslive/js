@@ -13,7 +13,7 @@ if (!cspRule) {
 	localStorage.setItem("CSPBlocker", cspRule)
 }
 
-if (cspRule.length) {
+if (cspRule != "disable") {
 	const meta = document.createElement("meta");
 	meta.setAttribute("http-equiv", "Content-Security-Policy");
 	meta.setAttribute("content", cspRule);
@@ -30,7 +30,9 @@ GM_registerMenuCommand("No JavaScript", () => { localStorage.setItem("CSPBlocker
 GM_registerMenuCommand("No Third-Party", () => { localStorage.setItem("CSPBlocker", "default-src 'unsafe-inline' 'self'") });
 GM_registerMenuCommand("Restrict js-elem", () => { localStorage.setItem("CSPBlocker", "script-src-elem 'self'") });
 GM_registerMenuCommand("Edit CSP rules", () => {
-	const newrule = prompt("Editing CSP rules", localStorage.getItem("CSPBlocker") || "");
+	var currentRule = localStorage.getItem("CSPBlocker");
+	if (currentRule = "disable") {currentRule = null}
+	const newrule = prompt("Editing CSP rules", currentRule || "");
 	if (newrule && newrule != "") {
 		localStorage.setItem("CSPBlocker", newrule)
 	}
