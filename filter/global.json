@@ -1,38 +1,49 @@
 {
     "www.acidadeon.com": {
         "enable": "false",
-        "display: none": [
-            ".placeholder"
-        ]
+        "1": {
+            "css": "display: none !important",
+            "selectors": [
+                ".placeholder"
+            ]
+        }
     },
     "www.saocarlosagora.com.br": {
         "enable": "true",
-        "display: none": [
-            ".barraazul",
-            ".billboard",
-            ".colunaBanners",
-            ".apenasMobile",
-            ".mobileNao",
-            ".squareBanner",
-            ".squareBanner336",
-            ".supperBanner",
-            ".shareAreas",
-            ".shareAreas2",
-            ".dvBanner250",
-            ".grid_4.bannerDireita"
-        ]
+        "1": {
+            "css": "display: none !important",
+            "selectors": [
+                ".barraazul",
+                ".billboard",
+                ".colunaBanners",
+                ".apenasMobile",
+                ".mobileNao",
+                ".squareBanner",
+                ".squareBanner336",
+                ".supperBanner",
+                ".shareAreas",
+                ".shareAreas2",
+                ".dvBanner250",
+                ".grid_4.bannerDireita"
+            ]
+        }
     },
     "saocarlosemrede.com.br": {
         "enable": "true",
-        "display: none": [
-            ".td-a-rec",
-            ".td-a-rec-id-content_inline",
-            ".widget",
-            ".widget_block",
-            ".td-post-sharing-top"
-        ],
-        "padding-top: 0px": [
-            ".td-main-page-wrap"
-        ]
+        "1": {
+            "css": "display: none !important",
+            "selectors": [
+                ".td-a-rec",
+                ".td-a-rec-id-content_inline",
+                ".widget",
+                ".widget_block",
+                ".td-post-sharing-top"
+            ]
+        },
+        "2": {
+            "padding-top: 0px": [
+                ".td-main-page-wrap"
+            ]
+        }
     }
 }

@@ -1,21 +1,22 @@
 // ==UserScript==
-// @name         AdBlock Userscript
-// @version      0.0.1
-// @author       karrdozo
-// @match        http*://*
-// @namespace    https://greasyfork.org/users/1115413
-// @icon         https://www.google.com/s2/favicons?sz=64&domain=getadblock.com
-// @license      MIT
-// @grant        GM_xmlhttpRequest
-// @grant        GM_registerMenuCommand
-// @require      https://code.jquery.com/jquery-3.6.3.min.js
-// @require      https://raw.githubusercontent.com/matheuslive/js/main/filter/global.json
-// @description  AdBlock, CSP and DOM element remover
+// @name                 AdBlock Userscript
+// @version              0.0.1
+// @author               karrdozo
+// @match                http*://*/*
+// @namespace            https://greasyfork.org/users/1115413
+// @icon                 https://www.google.com/s2/favicons?sz=64&domain=getadblock.com
+// @license              MIT
+// @grant                GM_xmlhttpRequest
+// @grant                GM_registerMenuCommand
+// @require              https://code.jquery.com/jquery-3.6.3.min.js
+// @resource global.json https://raw.githubusercontent.com/matheuslive/js/main/filter/global.json
+// @description          AdBlock, CSP and DOM element remover
 // ==/UserScript==
 
 /* eslint-env jquery */
 
 const cspRule = localStorage.getItem("CSPBlocker");
+const cssRule = GM_getResourceText("global.json");
 
 // Append CSP meta
 if (cspRule && cspRule != "disable") {
@@ -39,8 +40,8 @@ window.addEventListener("DOMContentLoaded", () => {
         document.head.appendChild(style);
     }
 
-    let filter = ChromeXt.filters;
-    if (filter != null) {
+    let cssRuleobj = JSON.parse(cssRule)[window.location.hostname];
+    if (cssRuleobj != null) {
         filter = JSON.parse(filter)
             .filter((item) => item.trim() != "")
             .join(", ");
