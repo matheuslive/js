@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name	     ChromeXt Eruda defaults
 // @description  Init eruda settings if not exists
-// @version      0.1.1
+// @version      0.1.2
 // @namespace	 karrdozo
 // @match	     http*://*
 // @license      MIT
@@ -13,7 +13,7 @@
 
 const erudaSettings = localStorage.getItem("eruda-dev-tools");
 if (!erudaSettings) {
-	localStorage.setItem("eruda-dev-tools", '{"transparency":1,"displaySize":50,"theme":"Dark"}')
+	localStorage.setItem("eruda-dev-tools", '{"transparency":1,"displaySize":60,"theme":"Dark"}')
 	//eruda._filter.add("iframe")
 }
 
