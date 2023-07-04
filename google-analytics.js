@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Block Google ads & analytics
 // @namespace    https://greasyfork.org/en/users/1115413-karrdozo
-// @version      1.1.5
+// @version      1.1.6
 // @license      MIT
 // @description  Block annoying Google ads & analytics
 // @author       karrdozo
