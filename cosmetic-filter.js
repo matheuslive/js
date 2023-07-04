@@ -1,3 +1,4 @@
+
 window.addEventListener("DOMContentLoaded", () => {
   function GM_addStyle(css) {
     const style = document.createElement("style");
