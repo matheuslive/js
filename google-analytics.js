@@ -5,7 +5,7 @@
 // @license      MIT
 // @description  Block annoying Google ads & analytics
 // @author       karrdozo
-// @include      http*://**
+// @include      http*://*/*
 // @run-at       document-start
 // ==/UserScript==
 
