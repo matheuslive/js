@@ -44,7 +44,14 @@
         item.addedNodes.forEach(node => {
           if (
             node.src &&
-            node.src.includes('ads')
+            node.src.includes('ads') ||
+            node.src.includes('gpt') ||
+            node.src.includes('gtag') ||
+            node.src.includes('amp-ad') ||
+            node.src.includes('amp-sticky-ad') ||
+            node.src.includes('amp-analytics') ||
+            node.src.includes('analytics') ||
+            node.src.includes('cleverwebserver')
           ) {
             node.remove();
           }
