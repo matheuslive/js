@@ -16,7 +16,6 @@
     interceptProp(window, 'adsbygoogle', {push: () => {}});
     interceptProp(window, 'dataLayer', {push: () => {}});
     interceptProp(window, 'ga', {push: () => {}});
-    interceptProp(window, 'googletag', {push: () => {}});
     interceptProp(window, 'google_tag_manager', {push: () => {}});
     interceptProp(window, 'google_tag_data', {push: () => {}});
 
