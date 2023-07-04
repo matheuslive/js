@@ -8,6 +8,8 @@
 // @license              MIT
 // @grant                GM_xmlhttpRequest
 // @grant                GM_registerMenuCommand
+// @grant                GM_getResourceText
+// @grant                GM_addStyle
 // @require              https://code.jquery.com/jquery-3.6.3.min.js
 // @resource global.json https://raw.githubusercontent.com/matheuslive/js/main/filter/global.json
 // @description          AdBlock, CSP and DOM element remover

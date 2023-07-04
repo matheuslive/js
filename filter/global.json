@@ -1,7 +1,7 @@
 {
     "www.acidadeon.com": {
         "enable": "false",
-        "1": {
+        "0": {
             "css": "display: none !important",
             "selectors": [
                 ".placeholder"
@@ -10,7 +10,7 @@
     },
     "www.saocarlosagora.com.br": {
         "enable": "true",
-        "1": {
+        "0": {
             "css": "display: none !important",
             "selectors": [
                 ".barraazul",
@@ -30,7 +30,7 @@
     },
     "saocarlosemrede.com.br": {
         "enable": "true",
-        "1": {
+        "0": {
             "css": "display: none !important",
             "selectors": [
                 ".td-a-rec",
@@ -40,7 +40,7 @@
                 ".td-post-sharing-top"
             ]
         },
-        "2": {
+        "1": {
             "padding-top: 0px": [
                 ".td-main-page-wrap"
             ]
