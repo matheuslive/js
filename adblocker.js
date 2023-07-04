@@ -17,29 +17,60 @@
 
 const cspRule = localStorage.getItem("CSPBlocker");
 
+// Append CSP meta
 if (cspRule && cspRule != "disable") {
-	const meta = document.createElement("meta");
-	meta.setAttribute("http-equiv", "Content-Security-Policy");
-	meta.setAttribute("content", cspRule);
-	try {
-		document.head.append(meta);
-	} catch {
-		setTimeout(() => {
-			document.head.append(meta);
-		}, 0);
-	}
+    const meta = document.createElement("meta");
+    meta.setAttribute("http-equiv", "Content-Security-Policy");
+    meta.setAttribute("content", cspRule);
+    try {
+        document.head.append(meta);
+    } catch {
+        setTimeout(() => {
+            document.head.append(meta);
+        }, 0);
+    }
 }
+
+window.addEventListener("DOMContentLoaded", () => {
+    function GM_addStyle(css) {
+        const style = document.createElement("style");
+        style.setAttribute("type", "text/css");
+        style.textContent = css;
+        document.head.appendChild(style);
+    }
+
+    let filter = ChromeXt.filters;
+    if (filter != null) {
+        filter = JSON.parse(filter)
+            .filter((item) => item.trim() != "")
+            .join(", ");
+        try {
+            GM_addStyle(filter + " {display: none !important;}");
+        } finally {
+            window.addEventListener("load", () => {
+                document.querySelectorAll(filter).forEach((node) => {
+                    node.hidden = true;
+                    node.style.display = "none";
+                });
+            });
+        }
+    }
+
+    document
+        .querySelectorAll("amp-ad,amp-embed,amp-sticky-ad")
+        .forEach((node) => node.remove());
+});
 
 GM_registerMenuCommand("No JavaScript", () => { localStorage.setItem("CSPBlocker", "script-src 'none'") });
 GM_registerMenuCommand("No Third-Party", () => { localStorage.setItem("CSPBlocker", "default-src 'unsafe-inline' 'self'") });
 GM_registerMenuCommand("Restrict js-elem", () => { localStorage.setItem("CSPBlocker", "script-src-elem 'self'") });
 GM_registerMenuCommand("Edit CSP rules", () => {
-	var currentRule = localStorage.getItem("CSPBlocker");
-	if (currentRule == "disable") {currentRule = null}
-	const newrule = prompt("Editing CSP rules", currentRule || "");
-	if (newrule && newrule != "") {
-		localStorage.setItem("CSPBlocker", newrule)
-	}
+    var currentRule = localStorage.getItem("CSPBlocker");
+    if (currentRule == "disable") { currentRule = null }
+    const newrule = prompt("Editing CSP rules", currentRule || "");
+    if (newrule && newrule != "") {
+        localStorage.setItem("CSPBlocker", newrule)
+    }
 });
 GM_registerMenuCommand("Clear CSP rules", () => { localStorage.setItem("CSPBlocker", "disable") });
 GM_registerMenuCommand("Reload Page", () => { location.reload() });

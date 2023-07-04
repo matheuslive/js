@@ -1,10 +1,38 @@
 {
-    "@context": "http://schema.org",
-    "@type": "WebSite",
-    "url": "https://www.acidadeon.com",
-    "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://www.acidadeon.com/buscar.html?search={search_term_string}",
-        "query-input": "required name=search_term_string"
+    "www.acidadeon.com": {
+        "enable": "false",
+        "display: none": [
+            ".placeholder"
+        ]
+    },
+    "www.saocarlosagora.com.br": {
+        "enable": "true",
+        "display: none": [
+            ".barraazul",
+            ".billboard",
+            ".colunaBanners",
+            ".apenasMobile",
+            ".mobileNao",
+            ".squareBanner",
+            ".squareBanner336",
+            ".supperBanner",
+            ".shareAreas",
+            ".shareAreas2",
+            ".dvBanner250",
+            ".grid_4.bannerDireita"
+        ]
+    },
+    "saocarlosemrede.com.br": {
+        "enable": "true",
+        "display: none": [
+            ".td-a-rec",
+            ".td-a-rec-id-content_inline",
+            ".widget",
+            ".widget_block",
+            ".td-post-sharing-top"
+        ],
+        "padding-top: 0px": [
+            ".td-main-page-wrap"
+        ]
     }
 }
