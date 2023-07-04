@@ -9,20 +9,15 @@
 // @grant        GM_xmlhttpRequest
 // @grant        GM_registerMenuCommand
 // @require      https://code.jquery.com/jquery-3.6.3.min.js
-// @require      https://greasyfork.org/scripts/.js
+// @require      https://raw.githubusercontent.com/matheuslive/js/main/filter/global.json
 // @description  AdBlock, CSP and DOM element remover
 // ==/UserScript==
 
 /* eslint-env jquery */
 
-var cspRule = localStorage.getItem("CSPBlocker");
+const cspRule = localStorage.getItem("CSPBlocker");
 
-if (!cspRule) {
-	cspRule = "script-src-elem 'self'";
-	localStorage.setItem("CSPBlocker", cspRule)
-}
-
-if (cspRule != "disable") {
+if (cspRule && cspRule != "disable") {
 	const meta = document.createElement("meta");
 	meta.setAttribute("http-equiv", "Content-Security-Policy");
 	meta.setAttribute("content", cspRule);
@@ -47,3 +42,4 @@ GM_registerMenuCommand("Edit CSP rules", () => {
 	}
 });
 GM_registerMenuCommand("Clear CSP rules", () => { localStorage.setItem("CSPBlocker", "disable") });
+GM_registerMenuCommand("Reload Page", () => { location.reload() });

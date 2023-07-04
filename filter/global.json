@@ -1,0 +1,10 @@
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "url": "https://www.acidadeon.com",
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://www.acidadeon.com/buscar.html?search={search_term_string}",
+        "query-input": "required name=search_term_string"
+    }
+}
