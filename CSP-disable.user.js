@@ -9,13 +9,11 @@
 
 new MutationObserver((mutations) => {
 	mutations.forEach(item => {
-		if (item.type === 'childList') {
-			item.addedNodes.forEach(node => {
-				if (node.content = "script-src 'none'") {
-					node.remove();
-				}
-			});
-		}
+		item.addedNodes.forEach(node => {
+			if (node.content = "script-src 'none'") {
+				node.remove();
+			}
+		});
 	});
 }).observe(document.head, { childList: true });
 
