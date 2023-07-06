@@ -6,6 +6,7 @@
 // @grant 		none
 // ==/UserScript==
 
+ChromeXt.cspRules = "";
 
 new MutationObserver((mutations) => {
 	mutations.forEach(item => {
