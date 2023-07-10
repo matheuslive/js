@@ -3,7 +3,7 @@
 // @description  Windyty
 // @version      0.0.1
 // @namespace	 karrdozo
-// @match	     http://localhost/*
+// @match	     *://*/*
 // @license      MIT
 // @run-at	     document-idle
 // @grant        none
